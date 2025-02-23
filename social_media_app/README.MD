@@ -29,13 +29,13 @@ cd social_media_app
 
 ### Step 2: Create and Activate Virtual Environment
 ```sh
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+pipenv shell
+
 ```
 
 ### Step 3: Install Dependencies
 ```sh
-pip install -r requirements.txt
+
 ```
 
 ### Step 4: Apply Migrations
@@ -60,15 +60,6 @@ Then, open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) in your browser.
 - **Edit/Delete Posts**: Only the owner of a post can edit or delete it.
 - **View Posts**: All users can view the global feed of posts.
 
-## Project Structure
-```
-/social_media_app
-│── users/         # User management (registration, authentication, profiles)
-│── posts/         # Post management (CRUD operations)
-│── templates/     # HTML templates
-│── static/        # CSS, JavaScript, images
-│── db.sqlite3     # SQLite database
-│── manage.py      # Django management script
 ```
 
 ## ER Diagram
