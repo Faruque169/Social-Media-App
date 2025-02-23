@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h2>Home</h2>
+
+    {% if posts %}
+        {% for post in posts %}
+            <article class="post">
+                <p><strong>{{ post.user.username }}</strong>: {{ post.content }}</p>
+                
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="Post image" class="post-image">
+                {% endif %}
+
+                <button class="like-btn" data-post-id="{{ post.id }}">Likes: {{ post.likes }}</button>
+            </article>
+        {% endfor %}
+    {% else %}
+        <p>No posts available. Start by creating one!</p>
+    {% endif %}
+
+    <script src="{% static 'js/main.js' %}"></script>  <!-- JavaScript for Likes -->
+{% endblock %}

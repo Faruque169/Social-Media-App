@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Your Posts</h2>
+{% for post in posts %}
+    <div class="post">
+        <p>{{ post.content }}</p>
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="Post Image">
+        {% endif %}
+        
+        <!-- Edit and Delete Options -->
+        <a href="{% url 'edit_post' post.id %}">Edit</a> |
+        <a href="{% url 'delete_post' post.id %}" class="delete-post">Delete</a>
+    </div>
+{% endfor %}
+{% endblock %}
